@@ -11,21 +11,22 @@
 </head>
 
 <body>
+   <div class="loader"></div>
    <header class="header">
       <nav class="header__nav">
-         <div class="header__logo">
+         <div class="header__logo-container">
             <a href="#">
                <div class="header__logo">Николай Петров</div>
             </a>
          </div>
          <div class="header__menu">
             <ul class="header__menu-list">
-               <li class="header__menu-item">ОБО МНЕ</li>
-               <li class="header__menu-item">УСЛУГИ</li>
-               <li class="header__menu-item">КЕЙСЫ</li>
-               <li class="header__menu-item">ПРАЙС</li>
-               <li class="header__menu-item">ОТЗЫВЫ</li>
-               <li class="header__menu-item">КОНТАКТЫ</li>
+               <li class="header__menu-item"><a class="header__menu-link" href="#">ОБО МНЕ</a></li>
+               <li class="header__menu-item"><a class="header__menu-link" href="#">УСЛУГИ</a></li>
+               <li class="header__menu-item"><a class="header__menu-link" href="#">КЕЙСЫ</a></li>
+               <li class="header__menu-item"><a class="header__menu-link" href="#">ПРАЙС</a></li>
+               <li class="header__menu-item"><a class="header__menu-link" href="#">ОТЗЫВЫ</a></li>
+               <li class="header__menu-item"><a class="header__menu-link" href="#">КОНТАКТЫ</a></li>
             </ul>
          </div>
       </nav>
@@ -34,13 +35,17 @@
       <div class="main__container">
          <h1 class="main__title">Привет<br>Я Николай Петров</h1>
          <h4 class="main__subtitle">Фулл стек веб - разработчик и Android - разработчик</h4>
-         <input class="main__input" type="submit" value="Обо мне">
-         <input class="main__input" type="submit" value="Мои работы">
+         <input class="main__input" type="button" value="Обо мне">
+         <input class="main__input" type="button" value="Мои работы">
       </div>
    </main>
    <section class="about">
-      <h2 class="title">ОБО МНЕ</h2>
-      <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      <div class="title-container">
+         <h2 class="title">ОБО МНЕ</h2>
+      </div>
+      <div class="border-container">
+         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      </div>
       <img class="about__img" src="./img/about__photo.png" alt="Фотография Николай Петров">
       <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare
          diam. Sed commodo nibh ante<br>
@@ -50,35 +55,47 @@
          diam. Sed commodo nibh ante<br>
          facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.
       </p>
-      <input class="about__input" type="submit" value="Скачать резюме">
+      <input class="about__input" type="button" value="Скачать резюме">
    </section>
    <section class="skills">
-      <h2 class="title skills__title">ЧТО Я УМЕЮ</h2>
-      <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      <div class="title-container">
+         <h2 class="title skills__title">ЧТО Я УМЕЮ</h2>
+      </div>
+      <div class="border-container">
+         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      </div>
       <div class="skills__container">
          <div class="skills__list">
-            <img class="skills__img-icon" src="./img/skills__img_icon1.png" alt="иконки">
+            <div class="skills-container-icons">
+               <img class="skills__img-icon" src="./img/skills__img_icon1.png" alt="иконки">
+            </div>
             <h3 class="skills__list-title">Веб-дизайн</h3>
             <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat<br>
                facilisis felis mi in tempus eleifend<br>
                pellentesque natoque etiam.</p>
          </div>
          <div class="skills__list">
-            <img class="skills__img-icon" src="./img/skills__img_icon2.png" alt="иконки">
+            <div class="skills-container-icons">
+               <img class="skills__img-icon" src="./img/skills__img_icon2.png" alt="иконки">
+            </div>
             <h3 class="skills__list-title">Разработка</h3>
             <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat<br>
                facilisis felis mi in tempus eleifend<br>
                pellentesque natoque etiam.</p>
          </div>
          <div class="skills__list">
-            <img class="skills__img-icon" src="./img/skills__img_icon3.png" alt="иконки">
+            <div class="skills-container-icons">
+               <img class="skills__img-icon" src="./img/skills__img_icon3.png" alt="иконки">
+            </div>
             <h3 class="skills__list-title">СЕО-Оптимизация</h3>
             <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat<br>
                facilisis felis mi in tempus eleifend<br>
                pellentesque natoque etiam.</p>
          </div>
          <div class="skills__list">
-            <img class="skills__img-icon" src="./img/skills__img_icon4.png" alt="иконки">
+            <div class="skills-container-icons">
+               <img class="skills__img-icon" src="./img/skills__img_icon4.png" alt="иконки">
+            </div>
             <h3 class="skills__list-title">Маркетинг</h3>
             <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat<br>
                facilisis felis mi in tempus eleifend<br>
@@ -87,8 +104,12 @@
       </div>
    </section>
    <section class="cases">
-      <h2 class="title">КЕЙСЫ</h2>
-      <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      <div class="title-container">
+         <h2 class="title">КЕЙСЫ</h2>
+      </div>
+      <div class="border-container">
+         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      </div>
       <p class="cases__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed Dapibus leo nec
          ornare
          diamcoccodo nibh ante facilisis.
@@ -144,8 +165,12 @@
       </div>
    </section>
    <section class="statistics">
-      <h2 class="title statistics__title">НЕМНОГО СТАТИСТИКИ</h2>
-      <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      <div class="title-container">
+         <h2 class="title statistics__title">НЕМНОГО СТАТИСТИКИ</h2>
+      </div>
+      <div class="border-container">
+         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      </div>
       <div class="statistics__container">
          <div class="statistics__list">
             <img class="statistics__img-icon" src="./img/statistics__img_icon1.png" alt="иконки">
@@ -170,8 +195,12 @@
       </div>
    </section>
    <section class="awards">
-      <h2 class="title">ОТЗЫВЫ</h2>
-      <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      <div class="title-container">
+         <h2 class="title">ОТЗЫВЫ</h2>
+      </div>
+      <div class="border-container">
+         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+      </div>
       <img class="awards__img" src="./img/awards__img.jpg" alt="Фотографии">
       <p class="awards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare
          diam. Sed commodo nibh ante<br>
@@ -183,8 +212,12 @@
    </section>
    <section class="contacts">
       <div class="container">
-         <h2 class="title title__white">МОИ КОНТАКТЫ</h2>
-         <img class="border-bottom border-bottom_margin" src="./img/border.jpg" alt="Нижняя линия">
+         <div class="title-container">
+            <h2 class="title title__white">МОИ КОНТАКТЫ</h2>
+         </div>
+         <div class="border-container">
+            <img class="border-bottom border-bottom_margin" src="./img/border.jpg" alt="Нижняя линия">
+         </div>
          <p class="contacts__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leo nec
             ornare diamcoccodo</p>
          <div class="contacts__container">
@@ -215,7 +248,7 @@
                <a href="#" class="contacts__social-link contacts__social-link_facebook"></a>
             </li>
             <li class="contacts__social-item">
-               <a href="#" class="contacts__social-link contacts__social-link_ twitter"></a>
+               <a href="#" class="contacts__social-link contacts__social-link_twitter"></a>
             </li>
             <li class="contacts__social-item">
                <a href="#" class="contacts__social-link contacts__social-link_ball"></a>
