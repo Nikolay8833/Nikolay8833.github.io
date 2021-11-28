@@ -1,0 +1,151 @@
+@media (min-width: 576px) {
+   h1.main__title {
+      font-size: 50px;
+   }
+
+   div.cases__container {
+      display: flex;
+      flex-direction: row;
+   }
+
+   div.cases__project {
+      padding-left: 35px;
+   }
+
+   ul.contacts__social-list {
+      max-width: 300px;
+   }
+}
+
+@media (min-width: 768px) {
+   .burger {
+      display: none;
+   }
+
+   li.header__menu-item {
+      display: block;
+   }
+
+   h1.main__title {
+      font-size: 55px;
+   }
+
+   div.skills__container {
+      display: flex;
+      padding-top: 45px;
+   }
+
+   p.skills__list-subtitle {
+      width: 100%;
+   }
+
+   div.cases__project {
+      padding-left: 85px;
+   }
+
+   div.statistics__container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+   }
+
+   input.contacts__form-input {
+      width: 60%;
+   }
+
+   textarea.contacts__textarea {
+      width: 60%;
+   }
+
+   ul.contacts__social-list {
+      max-width: 350px;
+   }
+}
+
+@media (min-width: 992px) {
+   div.header__logo-item {
+      font-size: 24px;
+   }
+
+   li.header__menu-item {
+      font-size: 17px;
+      padding-right: 25px;
+   }
+
+   .main::after {
+      display: none;
+   }
+
+   h1.main__title {
+      font-size: 60px;
+      color: #223549;
+   }
+
+   h4.main__subtitle {
+      font-size: 17px;
+      color: #76828e;
+   }
+
+   input.main__input {
+      color: #697784;
+      background-color: transparent;
+   }
+
+   input.main__input:hover {
+      background-color: #545454;
+      color: #ffffff;
+   }
+
+   div.contacts__wrapper {
+      padding: 0 200px;
+   }
+
+   div.contacts__container {
+      display: flex;
+      justify-content: space-around;
+   }
+
+   div.contacts__address {
+      font-size: 16px;
+   }
+
+   a.contacts__email {
+      font-size: 16px;
+   }
+
+   a.contacts__phone {
+      font-size: 16px;
+   }
+
+   div.contacts__form-box {
+      display: flex;
+   }
+
+   input.contacts__form-input_margin {
+      margin-right: 20px;
+   }
+
+   textarea.contacts__textarea {
+      width: 100%;
+   }
+
+   ul.contacts__social-list {
+      max-width: 420px;
+   }
+}
+
+@media (min-width: 1200px) {
+   li.header__menu-item {
+      padding-right: 40px;
+   }
+
+   h1.main__title {
+      font-size: 70px;
+      color: #223549;
+   }
+
+   h4.main__subtitle {
+      font-size: 21px;
+      color: #76828e;
+   }
+}

@@ -63,7 +63,7 @@ button::-moz-focus-inner {
 a,
 a:visited {
     text-decoration: none;
-    color: black;
+    color: #ffffff;
 }
 
 a:hover {
@@ -72,6 +72,7 @@ a:hover {
 
 ul li {
     list-style: none;
+    text-decoration: none;
 }
 
 img {
@@ -79,7 +80,7 @@ img {
 }
 
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -87,4 +88,4 @@ h5,
 h6 {
     font-size: inherit;
     font-weight: 400;
-}
+} */

@@ -7,20 +7,21 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Мой проект - портфолио</title>
    <link rel="stylesheet" href="./css/reset.css">
+   <link rel="stylesheet" href="./css/media.css">
    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
    <div class="loader"></div>
    <header class="header">
-      <nav class="header__nav">
-         <div class="header__logo-container">
-            <a href="#">
-               <div class="header__logo">Николай Петров</div>
-            </a>
-         </div>
-         <div class="header__menu">
-            <ul class="header__menu-list">
+      <div class="container">
+         <nav class="header__nav">
+            <div class="header__logo">
+               <a class="header__logo-link" href="#">
+                  <div class="header__logo-item">Николай Петров</div>
+               </a>
+            </div>
+            <ul class="header__menu">
                <li class="header__menu-item"><a class="header__menu-link" href="#">ОБО МНЕ</a></li>
                <li class="header__menu-item"><a class="header__menu-link" href="#">УСЛУГИ</a></li>
                <li class="header__menu-item"><a class="header__menu-link" href="#">КЕЙСЫ</a></li>
@@ -28,241 +29,277 @@
                <li class="header__menu-item"><a class="header__menu-link" href="#">ОТЗЫВЫ</a></li>
                <li class="header__menu-item"><a class="header__menu-link" href="#">КОНТАКТЫ</a></li>
             </ul>
-         </div>
-      </nav>
+            <div class="burger">
+               <input id="burger__menu-toggle" type="checkbox" />
+               <label class="burger__menu-btn" for="burger__menu-toggle">
+                  <span></span>
+               </label>
+               <ul class="burger__menu-box">
+                  <li class="burger__menu-item"><a class="burger__menu-link" href="#">ОБО МНЕ</a></li>
+                  <li class="burger__menu-item"><a class="burger__menu-link" href="#">УСЛУГИ</a></li>
+                  <li class="burger__menu-item"><a class="burger__menu-link" href="#">КЕЙСЫ</a></li>
+                  <li class="burger__menu-item"><a class="burger__menu-link" href="#">ПРАЙС</a></li>
+                  <li class="burger__menu-item"><a class="burger__menu-link" href="#">ОТЗЫВЫ</a></li>
+                  <li class="burger__menu-item"><a class="burger__menu-link" href="#">КОНТАКТЫ</a></li>
+               </ul>
+            </div>
+         </nav>
+      </div>
    </header>
    <main class="main">
-      <div class="main__container">
-         <h1 class="main__title">Привет<br>Я Николай Петров</h1>
-         <h4 class="main__subtitle">Фулл стек веб - разработчик и Android - разработчик</h4>
-         <input class="main__input" type="button" value="Обо мне">
-         <input class="main__input" type="button" value="Мои работы">
+      <div class="container">
+         <div class="main__box">
+            <h1 class="main__title">Привет<br>Я Николай Петров</h1>
+            <h4 class="main__subtitle">Фулл стек веб - разработчик и Android - разработчик</h4>
+            <input class="main__input" type="button" value="Обо мне">
+            <input class="main__input" type="button" value="Мои работы">
+         </div>
       </div>
    </main>
    <section class="about">
-      <div class="title-container">
-         <h2 class="title">ОБО МНЕ</h2>
+      <div class="container">
+         <div class="title-container">
+            <h2 class="title">ОБО МНЕ</h2>
+         </div>
+         <div class="border-container">
+            <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+         </div>
+         <img class="about__img" src="./img/about/about__photo.png" alt="Фотография Николай Петров">
+         <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare
+            diam. Sed commodo nibh ante<br>
+            facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.
+         </p>
+         <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare
+            diam. Sed commodo nibh ante<br>
+            facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.
+         </p>
+         <input class="about__input" type="button" value="Скачать резюме">
       </div>
-      <div class="border-container">
-         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
-      </div>
-      <img class="about__img" src="./img/about__photo.png" alt="Фотография Николай Петров">
-      <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare
-         diam. Sed commodo nibh ante<br>
-         facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.
-      </p>
-      <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare
-         diam. Sed commodo nibh ante<br>
-         facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.
-      </p>
-      <input class="about__input" type="button" value="Скачать резюме">
    </section>
    <section class="skills">
-      <div class="title-container">
-         <h2 class="title skills__title">ЧТО Я УМЕЮ</h2>
-      </div>
-      <div class="border-container">
-         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
-      </div>
-      <div class="skills__container">
-         <div class="skills__list">
-            <div class="skills-container-icons">
-               <img class="skills__img-icon" src="./img/skills__img_icon1.png" alt="иконки">
-            </div>
-            <h3 class="skills__list-title">Веб-дизайн</h3>
-            <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat<br>
-               facilisis felis mi in tempus eleifend<br>
-               pellentesque natoque etiam.</p>
+      <div class="container">
+         <div class="title-container">
+            <h2 class="title skills__title">ЧТО Я УМЕЮ</h2>
          </div>
-         <div class="skills__list">
-            <div class="skills-container-icons">
-               <img class="skills__img-icon" src="./img/skills__img_icon2.png" alt="иконки">
-            </div>
-            <h3 class="skills__list-title">Разработка</h3>
-            <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat<br>
-               facilisis felis mi in tempus eleifend<br>
-               pellentesque natoque etiam.</p>
+         <div class="border-container">
+            <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
          </div>
-         <div class="skills__list">
-            <div class="skills-container-icons">
-               <img class="skills__img-icon" src="./img/skills__img_icon3.png" alt="иконки">
+         <div class="skills__container">
+            <div class="skills__list">
+               <div class="skills-container-icons">
+                  <img class="skills__img-icon" src="./img/skills/skills__img_icon1.png" alt="иконки">
+               </div>
+               <h3 class="skills__list-title">Веб-дизайн</h3>
+               <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat
+                  facilisis felis mi in tempus eleifend
+                  pellentesque natoque etiam.</p>
             </div>
-            <h3 class="skills__list-title">СЕО-Оптимизация</h3>
-            <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat<br>
-               facilisis felis mi in tempus eleifend<br>
-               pellentesque natoque etiam.</p>
-         </div>
-         <div class="skills__list">
-            <div class="skills-container-icons">
-               <img class="skills__img-icon" src="./img/skills__img_icon4.png" alt="иконки">
+            <div class="skills__list">
+               <div class="skills-container-icons">
+                  <img class="skills__img-icon" src="./img/skills/skills__img_icon2.png" alt="иконки">
+               </div>
+               <h3 class="skills__list-title">Разработка</h3>
+               <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat
+                  facilisis felis mi in tempus eleifend
+                  pellentesque natoque etiam.</p>
             </div>
-            <h3 class="skills__list-title">Маркетинг</h3>
-            <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat<br>
-               facilisis felis mi in tempus eleifend<br>
-               pellentesque natoque etiam.</p>
+            <div class="skills__list">
+               <div class="skills-container-icons">
+                  <img class="skills__img-icon" src="./img/skills/skills__img_icon3.png" alt="иконки">
+               </div>
+               <h3 class="skills__list-title">СЕО-Оптимизация</h3>
+               <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat
+                  facilisis felis mi in tempus eleifend
+                  pellentesque natoque etiam.</p>
+            </div>
+            <div class="skills__list">
+               <div class="skills-container-icons">
+                  <img class="skills__img-icon" src="./img/skills/skills__img_icon4.png" alt="иконки">
+               </div>
+               <h3 class="skills__list-title">Маркетинг</h3>
+               <p class="skills__list-subtitle">Lorem ipsum dolor sit amet placerat
+                  facilisis felis mi in tempus eleifend
+                  pellentesque natoque etiam.</p>
+            </div>
          </div>
       </div>
    </section>
    <section class="cases">
-      <div class="title-container">
-         <h2 class="title">КЕЙСЫ</h2>
-      </div>
-      <div class="border-container">
-         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
-      </div>
-      <p class="cases__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed Dapibus leo nec
-         ornare
-         diamcoccodo nibh ante facilisis.
-      </p>
-      <img class="cases__img" src="./img/cases__img.jpg" alt="Open Cloud">
-      <div class="cases__container">
-         <div class="cases__info">
-            <h4 class="cases__info-title">CLIENT:</h4>
-            <p class="cases__info-subtitle">Какая-то компания</p>
-            <h4 class="cases__info-title">WEBSITE:</h4>
-            <a class="cases__info-site" href="#">http://www.somedomain.com</a>
-            <input class="cases__input" type="submit" value="VISIT LIVE SITE">
+      <div class="container">
+         <div class="title-container">
+            <h2 class="title">КЕЙСЫ</h2>
          </div>
-         <div class="cases__project">
-            <h4 class="cases__project-title">Название проекта</h4>
-            <p class="cases__project-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit., sed do eiusmod
-               tempor
-               incididunt ut labore et dolore magna<br>
-               aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-               consequat.<br>
-               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
+         <div class="border-container">
+            <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+         </div>
+         <p class="cases__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed Dapibus leo nec
+            ornare
+            diamcoccodo nibh ante facilisis.
+         </p>
+         <img class="cases__img" src="./img/cases__img.jpg" alt="Картинка open cloud">
+         <div class="cases__container">
+            <div class="cases__info">
+               <h4 class="cases__info-title">CLIENT:</h4>
+               <p class="cases__info-subtitle">Какая-то компания</p>
+               <h4 class="cases__info-title">WEBSITE:</h4>
+               <a class="cases__info-site" href="#">http://www.somedomain.com</a>
+               <input class="cases__input" type="submit" value="VISIT LIVE SITE">
+            </div>
+            <div class="cases__project">
+               <h4 class="cases__project-title">Название проекта</h4>
+               <p class="cases__project-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit., sed do eiusmod
+                  tempor
+                  incididunt ut labore et dolore magna<br>
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo
+                  consequat.<br>
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+               </p>
+            </div>
          </div>
       </div>
    </section>
    <section class="calculation">
-      <h2 class="title title-lowercase">Расчет стоимости</h2>
-      <div class="calculation__menu">
-         <div class="calculation__list">
-            <h4 class="calculation__list-title">ТИП САЙТА</h4>
-            <select class="calculation__select" name="ТИП САЙТА" id="">
-               <option class="calculation__list-select" value="">Выберите пункт...</option>
-               <option class="calculation__list-select" value="">Сроки</option>
-               <option class="calculation__list-select" value="">Стоимость</option>
-            </select>
+      <div class="container">
+         <h2 class="title title-lowercase">Расчет стоимости</h2>
+         <div class="calculation__menu">
+            <div class="calculation__list">
+               <h4 class="calculation__list-title">ТИП САЙТА</h4>
+               <select class="calculation__select" name="ТИП САЙТА" id="">
+                  <option class="calculation__list-select" value="">Выберите пункт...</option>
+                  <option class="calculation__list-select" value="">Сроки</option>
+                  <option class="calculation__list-select" value="">Стоимость</option>
+               </select>
+            </div>
+            <div class="calculation__list">
+               <h4 class="calculation__list-title">ДИЗАЙН</h4>
+               <select class="calculation__select" name="ДИЗАЙН" id="">
+                  <option class="calculation__list-select" value="">Выберите пункт...</option>
+                  <option class="calculation__list-select" value="">Сроки</option>
+                  <option class="calculation__list-select" value="">Стоимость</option>
+               </select>
+            </div>
+            <div class="calculation__list">
+               <h4 class="calculation__list-title">АДАПТИВНОСТЬ</h4>
+               <select class="calculation__select" name="" id="">
+                  <option class="calculation__list-select" value="">Выберите пункт...</option>
+                  <option class="calculation__list-select" value="">Сроки</option>
+                  <option class="calculation__list-select" value="">Стоимость</option>
+               </select>
+            </div>
          </div>
-         <div class="calculation__list">
-            <h4 class="calculation__list-title">ДИЗАЙН</h4>
-            <select class="calculation__select" name="ДИЗАЙН" id="">
-               <option class="calculation__list-select" value="">Выберите пункт...</option>
-               <option class="calculation__list-select" value="">Сроки</option>
-               <option class="calculation__list-select" value="">Стоимость</option>
-            </select>
-         </div>
-         <div class="calculation__list">
-            <h4 class="calculation__list-title">АДАПТИВНОСТЬ</h4>
-            <select class="calculation__select" name="" id="">
-               <option class="calculation__list-select" value="">Выберите пункт...</option>
-               <option class="calculation__list-select" value="">Сроки</option>
-               <option class="calculation__list-select" value="">Стоимость</option>
-            </select>
-         </div>
+         <input class="calculation__input" type="submit" value="Оставить заявку">
       </div>
    </section>
    <section class="statistics">
-      <div class="title-container">
-         <h2 class="title statistics__title">НЕМНОГО СТАТИСТИКИ</h2>
-      </div>
-      <div class="border-container">
-         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
-      </div>
-      <div class="statistics__container">
-         <div class="statistics__list">
-            <img class="statistics__img-icon" src="./img/statistics__img_icon1.png" alt="иконки">
-            <h3 class="statistics__list-title">120</h3>
-            <p class="statistics__list-subtitle">СЧАСТЛИВЫХ КЛИЕНТОВ</p>
+      <div class="container">
+         <div class="title-container">
+            <h2 class="title statistics__title">НЕМНОГО СТАТИСТИКИ</h2>
          </div>
-         <div class="statistics__list">
-            <img class="statistics__img-icon" src="./img/statistics__img_icon2.png" alt="иконки">
-            <h3 class="statistics__list-title">4,600</h3>
-            <p class="statistics__list-subtitle">ЧАСОВ РАБОТЫ</p>
+         <div class="border-container">
+            <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
          </div>
-         <div class="statistics__list">
-            <img class="statistics__img-icon" src="./img/statistics__img_icon3.png" alt="иконки">
-            <h3 class="statistics__list-title">340</h3>
-            <p class="statistics__list-subtitle">ПРОЕКТОВ ЗАВЕРШЕНО</p>
-         </div>
-         <div class="statistics__list">
-            <img class="statistics__img-icon" src="./img/statistics__img_icon4.png" alt="иконки">
-            <h3 class="statistics__list-title">23</h3>
-            <p class="statistics__list-subtitle">НАГРАД ПОЛУЧЕНО</p>
+         <div class="statistics__container">
+            <div class="statistics__list">
+               <img class="statistics__img-icon" src="./img/statistics/statistics__img_icon1.png" alt="иконки">
+               <h3 class="statistics__list-title">120</h3>
+               <p class="statistics__list-subtitle">СЧАСТЛИВЫХ КЛИЕНТОВ</p>
+            </div>
+            <div class="statistics__list">
+               <img class="statistics__img-icon" src="./img/statistics/statistics__img_icon2.png" alt="иконки">
+               <h3 class="statistics__list-title">4,600</h3>
+               <p class="statistics__list-subtitle">ЧАСОВ РАБОТЫ</p>
+            </div>
+            <div class="statistics__list">
+               <img class="statistics__img-icon" src="./img/statistics/statistics__img_icon3.png" alt="иконки">
+               <h3 class="statistics__list-title">340</h3>
+               <p class="statistics__list-subtitle">ПРОЕКТОВ ЗАВЕРШЕНО</p>
+            </div>
+            <div class="statistics__list">
+               <img class="statistics__img-icon" src="./img/statistics/statistics__img_icon4.png" alt="иконки">
+               <h3 class="statistics__list-title">23</h3>
+               <p class="statistics__list-subtitle">НАГРАД ПОЛУЧЕНО</p>
+            </div>
          </div>
       </div>
    </section>
    <section class="awards">
-      <div class="title-container">
-         <h2 class="title">ОТЗЫВЫ</h2>
+      <div class="container">
+         <div class="title-container">
+            <h2 class="title">ОТЗЫВЫ</h2>
+         </div>
+         <div class="border-container">
+            <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
+         </div>
+         <img class="awards__img" src="./img/awards/awards__img.jpg" alt="Фотографии">
+         <p class="awards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec
+            ornare
+            diam. Sed commodo nibh ante<br>
+            facilisis bibendum dolor feugiat at duis sed dapidus leo nec ornare diam.</p>
+         <p class="awards__text-name"><span>Михаил, </span>Ген директор ПАО “Газпром”.</p>
+         <img class="awards__img-points" src="./img/awards/awards__img_points.png" alt="Точки">
+         <img class="awards__img-points" src="./img/awards/awards__img_points2.png" alt="Точки">
+         <img class="awards__img-points" src="./img/awards/awards__img_points2.png" alt="Точки">
       </div>
-      <div class="border-container">
-         <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
-      </div>
-      <img class="awards__img" src="./img/awards__img.jpg" alt="Фотографии">
-      <p class="awards__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare
-         diam. Sed commodo nibh ante<br>
-         facilisis bibendum dolor feugiat at duis sed dapidus leo nec ornare diam.</p>
-      <p class="awards__text-name"><span>Михаил, </span>Ген директор ПАО “Газпром”.</p>
-      <img class="awards__img-points" src="./img/awards__img_points.png" alt="Точки">
-      <img class="awards__img-points" src="./img/awards__img_points2.png" alt="Точки">
-      <img class="awards__img-points" src="./img/awards__img_points2.png" alt="Точки">
    </section>
    <section class="contacts">
       <div class="container">
-         <div class="title-container">
-            <h2 class="title title__white">МОИ КОНТАКТЫ</h2>
-         </div>
-         <div class="border-container">
-            <img class="border-bottom border-bottom_margin" src="./img/border.jpg" alt="Нижняя линия">
-         </div>
-         <p class="contacts__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leo nec
-            ornare diamcoccodo</p>
-         <div class="contacts__container">
-            <div class="contacts__list">
-               <img class="contacts__img-icon" src="./img/contacts__input_icon1.png" alt="иконки">
-               <div class="contacts__address">Санкт-Петербург<br>Невский проспект 11</div>
-            </div>
-            <div class="contacts__list">
-               <img class="contacts__img-icon" src="./img/contacts__input_icon2.png" alt="иконки">
-               <a class="contacts__email" href="mailto:info@companyname.com">info@companyname.com</a>
-            </div>
-            <div class="contacts__list">
-               <img class="contacts__img-icon" src="./img/contacts__input_icon3.png" alt="иконки">
-               <a class="contacts__phone" href="tel:+79999999999">+7 999 999-99-99</a>
-            </div>
-         </div>
          <div class="contacts__wrapper">
-            <h3 class="contacts__message">ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h3>
-            <form class="contacts__form" action="">
-               <input class="contacts__input contacts__input-margin" type="submit" value="Имя">
-               <input class="contacts__input" type="submit" value="Email">
-               <textarea class="contacts__textarea" name="" id="" cols="100" rows="5">Сообщение</textarea>
-            </form>
-            <button class="contacts__btn">Отправить</button>
+            <div class="title-container">
+               <h2 class="title title__white">МОИ КОНТАКТЫ</h2>
+            </div>
+            <div class="border-container">
+               <img class="border-bottom border-bottom_margin" src="./img/border.jpg" alt="Нижняя линия">
+            </div>
+            <p class="contacts__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leo
+               nec
+               ornare diamcoccodo</p>
+            <div class="contacts__container">
+               <div class="contacts__list">
+                  <img class="contacts__img-icon" src="./img/contacts/contacts__input_icon1.png" alt="иконки">
+                  <div class="contacts__address">Санкт-Петербург<br>Невский проспект 11</div>
+               </div>
+               <div class="contacts__list">
+                  <img class="contacts__img-icon" src="./img/contacts/contacts__input_icon2.png" alt="иконки">
+                  <a class="contacts__email" href="mailto:info@companyname.com">info@companyname.com</a>
+               </div>
+               <div class="contacts__list">
+                  <img class="contacts__img-icon" src="./img/contacts/contacts__input_icon3.png" alt="иконки">
+                  <a class="contacts__phone" href="tel:+79999999999">+7 999 999-99-99</a>
+               </div>
+            </div>
+            <div class="contacts__box">
+               <h3 class="contacts__message">ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h3>
+               <form class="contacts__form" action="">
+                  <div class="contacts__form-box">
+                     <input class="contacts__form-input contacts__form-input_margin" type="submit" value="Имя">
+                     <input class="contacts__form-input" type="submit" value="Email">
+                  </div>
+                  <textarea class="contacts__textarea" name="" id="" cols="" rows="">Сообщение</textarea>
+               </form>
+               <button class="contacts__btn">Отправить</button>
+            </div>
+            <ul class="contacts__social-list">
+               <li class="contacts__social-item">
+                  <a href="#" class="contacts__social-link contacts__social-link_facebook"></a>
+               </li>
+               <li class="contacts__social-item">
+                  <a href="#" class="contacts__social-link contacts__social-link_twitter"></a>
+               </li>
+               <li class="contacts__social-item">
+                  <a href="#" class="contacts__social-link contacts__social-link_ball"></a>
+               </li>
+               <li class="contacts__social-item">
+                  <a href="#" class="contacts__social-link contacts__social-link_kat"></a>
+               </li>
+               <li class="contacts__social-item">
+                  <a href="#" class="contacts__social-link contacts__social-link_inctagram"></a>
+               </li>
+               <li class="contacts__social-item">
+                  <a href="#" class="contacts__social-link contacts__social-link_in"></a>
+               </li>
+            </ul>
          </div>
-         <ul class="contacts__social-list">
-            <li class="contacts__social-item">
-               <a href="#" class="contacts__social-link contacts__social-link_facebook"></a>
-            </li>
-            <li class="contacts__social-item">
-               <a href="#" class="contacts__social-link contacts__social-link_twitter"></a>
-            </li>
-            <li class="contacts__social-item">
-               <a href="#" class="contacts__social-link contacts__social-link_ball"></a>
-            </li>
-            <li class="contacts__social-item">
-               <a href="#" class="contacts__social-link contacts__social-link_kat"></a>
-            </li>
-            <li class="contacts__social-item">
-               <a href="#" class="contacts__social-link contacts__social-link_inctagram"></a>
-            </li>
-            <li class="contacts__social-item">
-               <a href="#" class="contacts__social-link contacts__social-link_in"></a>
-            </li>
-         </ul>
       </div>
    </section>
    <footer class="footer">
