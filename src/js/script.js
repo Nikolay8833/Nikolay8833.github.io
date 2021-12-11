@@ -1,64 +1,182 @@
 "use strict"
 
-let siteType = [
-   ["Сайт визитка", "Срок выполнения: 2 дня", "Стоимость: 2000 рублей" ],
-   ["Интернет магазин", "Срок выполнения: 3 дня", "Стоимость: 3000 рублей" ],
-   ["Корпоративный cайт", "Срок выполнения: 4 дня", "Стоимость: 4000 рублей" ]
-];
+$("select").change(function calculate() {
 
-let designType = [
-   ["Шаблонный дизайн", "Срок выполнения: 2 дня", "Стоимость: 2000 рублей" ],
-   ["Органический дизайн", "Срок выполнения: 3 дня", "Стоимость: 3000 рублей" ],
-   ["Уникальный дизайн", "Срок выполнения: 4 дня", "Стоимость: 4000 рублей" ]
-];
+   let siteType = parseFloat($("#siteType").val());
+   let designType = parseFloat($("#designType").val());
+   let siteAdaptive = parseFloat($("#siteAdaptive").val());
 
-let siteAdaptive = [
-   ["Не адаптивный сайт", "Стоимость: 0 рублей"],
-   ["Адаптивный сайт", "Срок выполнения: 3 дня", "Стоимость: 3000 рублей" ],
-];
+   let total = siteType + designType + siteAdaptive;
 
-let siteTypePrompt = prompt("Какой вам нужен тип сайта? Введите цифру:", "1 - Сайт визитка, 2 - Интернет магазин, 3 - Корпоративный cайт");
+   $("#total").html(total.toFixed());
 
-if(siteTypePrompt == 1) {
-   siteTypePrompt = 2000;
-   alert(siteType[0]);
-} else if(siteTypePrompt == 2) {
-   siteTypePrompt = 3000;
-   alert(siteType[1]);
-} else if(siteTypePrompt == 3) {
-   siteTypePrompt = 4000;
-   alert(siteType[2]);
-} else {
-   alert("Неправильный ввод");
+   let siteTypeDate = 0;
+   if (siteType == 2000) {
+      siteTypeDate = 2;
+   } else if (siteType == 3000) {
+      siteTypeDate = 3;
+   } else if (siteType == 4000) {
+      siteTypeDate = 4;
+   } else {
+      siteTypeDate = 0;
+   };
+
+   let designTypeDate = 0;
+   if (designType == 2000) {
+      designTypeDate = 2;
+   } else if (designType == 3000) {
+      designTypeDate = 3;
+   } else if (designType == 4000) {
+      designTypeDate = 4;
+   } else {
+      designTypeDate = 0;
+   }
+
+   let siteAdaptiveDate = 0;
+   if (siteAdaptive == 3000) {
+      siteAdaptiveDate = 3;
+   } else {
+      siteAdaptiveDate = 0;
+   };
+
+   let totalDate = siteTypeDate + designTypeDate + siteAdaptiveDate;
+
+   $("#total-date").html(totalDate.toFixed());
+});
+
+let titleOptions = {
+   threshold: [0.5]
+};
+let titleObserver = new IntersectionObserver(titleOnEntry, titleOptions);
+let titleElements = $('.title-animation');
+titleElements.each((i, el) => {
+   titleObserver.observe(el);
+});
+
+function titleOnEntry(titleEntry) {
+   titleEntry.forEach(change => {
+      if (change.isIntersecting) {
+         change.target.classList.add('title-animation_show');
+      }
+   });
 };
 
-let designTypePrompt = prompt("Какой вам нужен дизайн? Введите цифру:", "1 - Шаблонный дизайн, 2 - Органический дизайн, 3 - Уникальный дизайн");
+let borderOptions = {
+   threshold: [0.5]
+};
+let borderObserver = new IntersectionObserver(borderOnEntry, borderOptions);
+let borderElements = $('.border-animation');
+borderElements.each((i, el) => {
+   borderObserver.observe(el);
+});
 
-if(designTypePrompt == 1) {
-   designTypePrompt = 2000;
-   alert(designType[0]);
-} else if(designTypePrompt == 2) {
-   designTypePrompt = 3000;
-   alert(designType[1]);
-} else if(designTypePrompt == 3) {
-   designTypePrompt = 4000;
-   alert(designType[2]);
-} else {
-   alert("Неправильный ввод");
+function borderOnEntry(borderEntry) {
+   borderEntry.forEach(change => {
+      if (change.isIntersecting) {
+         change.target.classList.add('border-animation_show');
+      }
+   });
 };
 
-let siteAdaptivePrompt = prompt("Нужен ли вам адаптивный сайт? Введите цифру:", "1 - Не адаптивный сайт, 2 - Адаптивный сайт");
+let skillsOptions = {
+   threshold: [0.5]
+};
+let skillsObserver = new IntersectionObserver(skillsOnEntry, skillsOptions);
+let skillsElements = $('.skills-animation');
+skillsElements.each((i, el) => {
+   skillsObserver.observe(el);
+});
 
-if(siteAdaptivePrompt == 1) {
-   siteAdaptivePrompt = 0;
-   alert(siteAdaptive[0]);
-} else if(siteAdaptivePrompt == 2) {
-   siteAdaptivePrompt = 3000;
-   alert(siteAdaptive[1]);
-} else {
-   alert("Неправильный ввод");
+function skillsOnEntry(skillsEntry) {
+   skillsEntry.forEach(change => {
+      if (change.isIntersecting) {
+         change.target.classList.add('skills-animation_show');
+      }
+   });
 };
 
-let total = (siteTypePrompt + designTypePrompt + siteAdaptivePrompt);
+let swiperOptions = {
+   threshold: [0.5]
+};
+let swiperObserver = new IntersectionObserver(swiperOnEntry, swiperOptions);
+let swiperElements = $('.swiper-animation');
+swiperElements.each((i, el) => {
+   swiperObserver.observe(el);
+});
 
-alert("Общая стоимость сайта: " + total + " рублей.");
+function swiperOnEntry(swiperEntry) {
+   swiperEntry.forEach(change => {
+      if (change.isIntersecting) {
+         change.target.classList.add('swiper-animation_show');
+      }
+   });
+};
+
+let statisticsOptions = {
+   threshold: [0.5]
+};
+let statisticsObserver = new IntersectionObserver(statisticsOnEntry, statisticsOptions);
+let statisticsElements = $('.statistics-animation');
+statisticsElements.each((i, el) => {
+   statisticsObserver.observe(el);
+});
+
+function statisticsOnEntry(statisticsEntry) {
+   statisticsEntry.forEach(change => {
+      if (change.isIntersecting) {
+         change.target.classList.add('statistics-animation_show');
+      }
+   });
+};
+
+$(window).scroll(() => {
+   let scrollDistance = $(window).scrollTop();
+
+   $('section').each((i, el) => {
+
+      if ($(el).offset().top - $('nav').outerHeight() <= scrollDistance) {
+         $('nav a').each((i, el) => {
+            if ($(el).hasClass('link-active')) {
+               $(el).removeClass('link-active');
+            }
+         });
+
+         $('nav li:eq(' + i + ')').find('a').addClass('link-active');
+      }
+   });
+});
+
+$('a[href^="#"]').click(function () {
+   let valHref = $(this).attr("href");
+   $('html, body').animate({
+      scrollTop: $(valHref).offset().top - 70 + "px"
+   });
+});
+
+
+
+const swiper = new Swiper('.swiper', {
+
+   direction: 'horizontal',
+   loop: true,
+
+   pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      // dynamicBullets: true,
+      /*  renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+       }, */
+   },
+
+   navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+   },
+
+   /* scrollbar: {
+      el: '.swiper-scrollbar',
+   }, */
+});
+
+$('#loader').addClass("hide-loader");

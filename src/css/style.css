@@ -6,11 +6,19 @@
    font-style: normal;
 }
 
+/* html {
+   scroll-behavior: smooth;
+}
+
+:target {
+   scroll-margin-top: 70px;
+} */
+
 body {
    font-family: 'Franklin Gothic', Arial, Helvetica, sans-serif;
 }
 
-/* .loader {
+.loader {
    position: absolute;
    top: 20%;
    left: 50%;
@@ -20,6 +28,7 @@ body {
    border-radius: 50%;
    width: 100px;
    height: 100px;
+   z-index: 1;
    animation: loader 3s linear infinite;
 }
 
@@ -31,7 +40,11 @@ body {
    100% {
       transform: translate(-20%, 50%) rotate(360deg);
    }
-} */
+}
+
+.hide-loader {
+   display: none;
+}
 
 .container {
    max-width: 1140px;
@@ -56,6 +69,7 @@ body {
 
 .header__logo-item {
    font-size: 20px;
+   color: #ffffff;
    animation: coming 3s ease;
 }
 
@@ -121,14 +135,19 @@ body {
    transition: all 1s;
    transform: scale(1);
    display: inline-block;
+   color: #ffffff;
 }
 
-.header__menu-link:active {
-   transform: scale(1.2);
+.link-active {
+   color: rgb(252, 144, 4);
 }
 
 .header__menu-link:hover {
    color: rgb(252, 144, 4);
+}
+
+.header__menu-link:active {
+   transform: scale(1.2);
 }
 
 .header__menu-item {
@@ -237,7 +256,7 @@ body {
    background-color: #CFD8DC;
 }
 
-.main {
+#main {
    background: url(../img/main/main__boy.png) 80% 100% / auto 80% no-repeat, url(../img/main/main__bg.jpg) center / cover no-repeat;
    height: 100%;
    position: relative;
@@ -307,15 +326,15 @@ body {
    transform: scale(1.2);
 }
 
-.about {
+#about {
    text-align: center;
 }
 
 .title-container {
    width: 100%;
-   opacity: 0;
+   /* opacity: 0;
    animation: title 3s ease forwards;
-   animation-delay: 1s;
+   animation-delay: 1s; */
 }
 
 .title {
@@ -325,6 +344,16 @@ body {
    font-weight: 700;
    color: #263244;
    margin: 100px 0 30px;
+}
+
+.title-animation {
+   opacity: 0;
+}
+
+.title-animation_show {
+   opacity: 1;
+   animation: title 2s ease forwards;
+   transition: all 1s;
 }
 
 @keyframes title {
@@ -341,15 +370,22 @@ body {
 
 .border-container {
    width: 100%;
-   opacity: 0;
-   animation: borderBottom 3s ease forwards;
-   animation-delay: 1s;
 }
 
 .border-bottom {
    width: 70px;
    display: block;
    margin: 0 auto 60px;
+}
+
+.border-animation {
+   opacity: 0;
+}
+
+.border-animation_show {
+   opacity: 1;
+   animation: borderBottom 2s ease forwards;
+   transition: all 1s;
 }
 
 @keyframes borderBottom {
@@ -391,7 +427,7 @@ body {
    transform: scale(1.2);
 }
 
-.skills {
+#skills {
    background: url(../img/skills/skills__bg.jpg) center / cover no-repeat;
    width: 100%;
 }
@@ -404,10 +440,32 @@ body {
    text-align: center;
 }
 
+.skills-animation {
+   opacity: 0;
+}
+
+.skills-animation_show {
+   opacity: 1;
+   animation: skillsAnimation 4s ease forwards;
+   transition: all 1s;
+}
+
+@keyframes skillsAnimation {
+   from {
+      opacity: 0;
+      margin-left: 0;
+   }
+
+   to {
+      opacity: 1;
+      margin-left: 0;
+   }
+}
+
 .skills-container-icons {
    width: 100%;
    opacity: 0;
-   animation: icons 4s ease forwards;
+   animation: icons 2s ease forwards;
    animation-delay: 2s;
 }
 
@@ -442,7 +500,7 @@ body {
    margin: 0 auto;
 }
 
-.cases {
+#cases {
    padding-bottom: 170px;
 }
 
@@ -455,6 +513,44 @@ body {
 
 .cases__img {
    max-width: 100%;
+}
+
+.swiper {
+   max-width: 100%;
+   max-height: inherit;
+}
+
+.swiper-animation {
+   opacity: 0;
+}
+
+.swiper-animation_show {
+   opacity: 1;
+   animation: swiperAnimation 2s ease forwards;
+   transition: all 1s;
+}
+
+@keyframes swiperAnimation {
+   from {
+      opacity: 0;
+      margin-left: 0;
+   }
+
+   to {
+      opacity: 1;
+      margin-left: 0;
+   }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+   font-size: 20px;
+   font-weight: 400;
+}
+
+.swiper-pagination-bullet {
+   width: 10px;
+   height: 10px;
 }
 
 .cases__container {
@@ -540,6 +636,27 @@ body {
    font-weight: 700;
 }
 
+.calculation__border {
+   width: 80%;
+   margin: 0 auto;
+   border-bottom: #c8d8d6 solid 2px;
+   margin-bottom: 20px;
+}
+
+.calculation__total {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 80%;
+   margin: 0 auto;
+   color: #1c2534;
+   text-transform: uppercase;
+}
+
+.calculation__total-bottom {
+   padding-bottom: 10px;
+}
+
 .calculation__select {
    display: block;
    width: 80%;
@@ -555,7 +672,7 @@ body {
    width: 201px;
    height: 44px;
    display: block;
-   margin: 0 auto 45px;
+   margin: 45px auto;
    background-color: #63b5ae;
    border-radius: 5px;
    font-size: 21px;
@@ -595,6 +712,28 @@ body {
    color: #cf7600;
 }
 
+.statistics-animation {
+   opacity: 0;
+}
+
+.statistics-animation_show {
+   opacity: 1;
+   animation: statisticsAnimation 2s ease forwards;
+   transition: all 1s;
+}
+
+@keyframes statisticsAnimation {
+   from {
+      opacity: 0;
+      margin-left: 0;
+   }
+
+   to {
+      opacity: 1;
+      margin-left: 0;
+   }
+}
+
 .statistics__list-subtitle {
    font-weight: 400;
    font-size: 16px;
@@ -602,8 +741,12 @@ body {
    padding-bottom: 55px;
 }
 
-.awards {
+#awards {
    text-align: center;
+}
+
+.awards__img {
+   max-width: 100%;
 }
 
 .awards__text {
@@ -623,7 +766,7 @@ body {
    font-weight: 700;
 }
 
-.contacts {
+#contacts {
    background: url(../img/contacts/contacts__bg.jpg) center / 100% 100% no-repeat;
    text-align: center;
 }
@@ -778,7 +921,7 @@ body {
 }
 
 .contacts__social-link_facebook:hover {
-   transform: rotate(15deg);
+   transform: rotate(45deg);
 }
 
 .contacts__social-link_twitter {
@@ -787,7 +930,7 @@ body {
 }
 
 .contacts__social-link_twitter:hover {
-   transform: rotate(15deg);
+   transform: rotate(45deg);
 }
 
 .contacts__social-link_ball {
@@ -796,7 +939,7 @@ body {
 }
 
 .contacts__social-link_ball:hover {
-   transform: rotate(15deg);
+   transform: rotate(45deg);
 }
 
 .contacts__social-link_kat {
@@ -805,7 +948,7 @@ body {
 }
 
 .contacts__social-link_kat:hover {
-   transform: rotate(15deg);
+   transform: rotate(45deg);
 }
 
 .contacts__social-link_inctagram {
@@ -814,7 +957,7 @@ body {
 }
 
 .contacts__social-link_inctagram:hover {
-   transform: rotate(15deg);
+   transform: rotate(45deg);
 }
 
 .contacts__social-link_in {
@@ -823,11 +966,11 @@ body {
 }
 
 .contacts__social-link_in:hover {
-   transform: rotate(15deg);
+   transform: rotate(45deg);
 }
 
 .footer__container {
-   background: url(../img/map.jpg) center / cover no-repeat;
+   background: url(../img/footer__map.png) center / cover no-repeat;
    height: 50vh;
    padding: 140px 0;
 }
