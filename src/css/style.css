@@ -19,8 +19,8 @@ body {
 }
 
 .loader {
-   position: absolute;
-   top: 20%;
+   position: fixed;
+   top: 30%;
    left: 50%;
    border: 16px solid #ffffff;
    border-top: 16px solid #4b4b4b;
@@ -262,14 +262,14 @@ body {
    position: relative;
 }
 
-.main::after {
+#main::after {
    content: "";
    position: absolute;
    top: 0;
    bottom: 0;
    left: 0;
    right: 0;
-   background: rgba(0, 0, 0, 0.5);
+   background: rgba(0, 0, 0, 0.3);
 }
 
 .main__box {
@@ -440,17 +440,17 @@ body {
    text-align: center;
 }
 
-.skills-animation {
+.site-animation {
    opacity: 0;
 }
 
-.skills-animation_show {
+.site-animation_show {
    opacity: 1;
-   animation: skillsAnimation 4s ease forwards;
+   animation: siteAnimation 4s ease forwards;
    transition: all 1s;
 }
 
-@keyframes skillsAnimation {
+@keyframes siteAnimation {
    from {
       opacity: 0;
       margin-left: 0;
@@ -520,37 +520,17 @@ body {
    max-height: inherit;
 }
 
-.swiper-animation {
-   opacity: 0;
-}
-
-.swiper-animation_show {
-   opacity: 1;
-   animation: swiperAnimation 2s ease forwards;
-   transition: all 1s;
-}
-
-@keyframes swiperAnimation {
-   from {
-      opacity: 0;
-      margin-left: 0;
-   }
-
-   to {
-      opacity: 1;
-      margin-left: 0;
-   }
-}
-
 .swiper-button-prev::after,
 .swiper-button-next::after {
    font-size: 20px;
    font-weight: 400;
+   color: #63b5ae;
 }
 
 .swiper-pagination-bullet {
    width: 10px;
    height: 10px;
+   color: #63b5ae;
 }
 
 .cases__container {
@@ -594,6 +574,7 @@ body {
    border-radius: 5px;
    font-size: 21px;
    color: #ffffff;
+   cursor: pointer;
    text-transform: uppercase;
    transition: all 1.5s;
    transform: scale(1);
@@ -677,6 +658,7 @@ body {
    border-radius: 5px;
    font-size: 21px;
    color: #ffffff;
+   cursor: pointer;
    text-transform: unset;
    transition: all 1.5s;
    transform: scale(1);
@@ -710,28 +692,6 @@ body {
    font-size: 16px;
    font-weight: 600;
    color: #cf7600;
-}
-
-.statistics-animation {
-   opacity: 0;
-}
-
-.statistics-animation_show {
-   opacity: 1;
-   animation: statisticsAnimation 2s ease forwards;
-   transition: all 1s;
-}
-
-@keyframes statisticsAnimation {
-   from {
-      opacity: 0;
-      margin-left: 0;
-   }
-
-   to {
-      opacity: 1;
-      margin-left: 0;
-   }
 }
 
 .statistics__list-subtitle {
@@ -994,4 +954,77 @@ body {
    color: #ffffff;
    text-align: center;
    padding: 40px 0;
+}
+
+.modal-container {
+   position: relative;
+}
+
+.modal {
+   width: 60%;
+   height: 30vh;
+   background: #ffffff;
+   text-align: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 100;
+   margin: auto;
+   box-shadow: 1px 1px 10px #545454;
+   display: none;
+}
+
+.modal__text {
+   padding: 10px 30px;
+   background: #545454;
+   color: #ffffff;
+   text-align: center;
+   font-weight: 700;
+}
+
+.modal__button {
+   width: 160px;
+   height: 40px;
+   margin-top: 50px;
+   background-color: #63b5ae;
+   border-radius: 5px;
+   font-size: 18px;
+   color: #ffffff;
+   cursor: pointer;
+   transition: all 1.5s;
+   transform: scale(1);
+}
+
+.modal__button:hover {
+   background-color: #545454;
+   color: #ffffff;
+}
+
+.modal__button:active {
+   transform: scale(1.2);
+}
+
+.modal__btn {
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   top: 7px;
+   right: 10px;
+   border: none;
+   border-radius: 50%;
+   background-color: #63b5ae;
+   cursor: pointer;
+   outline: none;
+}
+
+.modal__btn:before {
+   color: rgba(255, 255, 255, 0.9);
+   content: "X";
+   text-decoration: none;
+}
+
+.modal__btn:hover {
+   background-color: rgb(252, 144, 4);
 }

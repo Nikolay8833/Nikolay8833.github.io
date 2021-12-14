@@ -6,10 +6,6 @@ $("select").change(function calculate() {
    let designType = parseFloat($("#designType").val());
    let siteAdaptive = parseFloat($("#siteAdaptive").val());
 
-   let total = siteType + designType + siteAdaptive;
-
-   $("#total").html(total.toFixed());
-
    let siteTypeDate = 0;
    if (siteType == 2000) {
       siteTypeDate = 2;
@@ -42,6 +38,25 @@ $("select").change(function calculate() {
    let totalDate = siteTypeDate + designTypeDate + siteAdaptiveDate;
 
    $("#total-date").html(totalDate.toFixed());
+
+   let total = siteType + designType + siteAdaptive;
+
+   $("#total").html(total.toFixed());
+
+   /* let discountCost;
+   let totalCost = total - discountCost;
+   $("#total").html(totalCost.toFixed()); */
+
+   document.getElementById('modal__button').onclick = function () {
+
+      /* let discount = 10;
+      discountCost = total / discount; */
+      close();
+   };
+
+   function close() {
+      document.getElementById('modal').style.display = 'none';
+   };
 });
 
 let titleOptions = {
@@ -78,53 +93,19 @@ function borderOnEntry(borderEntry) {
    });
 };
 
-let skillsOptions = {
+let siteOptions = {
    threshold: [0.5]
 };
-let skillsObserver = new IntersectionObserver(skillsOnEntry, skillsOptions);
-let skillsElements = $('.skills-animation');
-skillsElements.each((i, el) => {
-   skillsObserver.observe(el);
+let siteObserver = new IntersectionObserver(siteOnEntry, siteOptions);
+let siteElements = $('.site-animation');
+siteElements.each((i, el) => {
+   siteObserver.observe(el);
 });
 
-function skillsOnEntry(skillsEntry) {
-   skillsEntry.forEach(change => {
+function siteOnEntry(siteEntry) {
+   siteEntry.forEach(change => {
       if (change.isIntersecting) {
-         change.target.classList.add('skills-animation_show');
-      }
-   });
-};
-
-let swiperOptions = {
-   threshold: [0.5]
-};
-let swiperObserver = new IntersectionObserver(swiperOnEntry, swiperOptions);
-let swiperElements = $('.swiper-animation');
-swiperElements.each((i, el) => {
-   swiperObserver.observe(el);
-});
-
-function swiperOnEntry(swiperEntry) {
-   swiperEntry.forEach(change => {
-      if (change.isIntersecting) {
-         change.target.classList.add('swiper-animation_show');
-      }
-   });
-};
-
-let statisticsOptions = {
-   threshold: [0.5]
-};
-let statisticsObserver = new IntersectionObserver(statisticsOnEntry, statisticsOptions);
-let statisticsElements = $('.statistics-animation');
-statisticsElements.each((i, el) => {
-   statisticsObserver.observe(el);
-});
-
-function statisticsOnEntry(statisticsEntry) {
-   statisticsEntry.forEach(change => {
-      if (change.isIntersecting) {
-         change.target.classList.add('statistics-animation_show');
+         change.target.classList.add('site-animation_show');
       }
    });
 };
@@ -153,8 +134,6 @@ $('a[href^="#"]').click(function () {
    });
 });
 
-
-
 const swiper = new Swiper('.swiper', {
 
    direction: 'horizontal',
@@ -180,3 +159,6 @@ const swiper = new Swiper('.swiper', {
 });
 
 $('#loader').addClass("hide-loader");
+
+let delay = 20000;
+setTimeout("document.getElementById('modal').style.display='block'", delay);

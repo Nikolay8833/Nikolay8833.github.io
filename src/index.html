@@ -89,7 +89,7 @@
          <div class="border-container border-animation">
             <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
          </div>
-         <div class="skills__container skills-animation">
+         <div class="skills__container site-animation">
             <div class="skills__list">
                <div class="skills-container-icons">
                   <img class="skills__img-icon" src="./img/skills/skills__img_icon1.png" alt="иконки">
@@ -142,7 +142,7 @@
             ornare
             diamcoccodo nibh ante facilisis.
          </p>
-         <div class="swiper swiper-animation">
+         <div class="swiper site-animation">
             <div class="swiper-wrapper">
                <div class="swiper-slide">
                   <img class="cases__img" src="./img/cases__img.jpg" alt="Картинка open cloud">
@@ -193,7 +193,7 @@
             <div class="calculation__list">
                <h4 class="calculation__list-title">ТИП САЙТА</h4>
                <select class="calculation__select" name="siteType" id="siteType">
-                  <option class="calculation__list-select" value="0" data value=0>Выберите пункт...</option>
+                  <option class="calculation__list-select" value="0">Выберите пункт...</option>
                   <option class="calculation__list-select" value="2000">Сайт визитка</option>
                   <option class="calculation__list-select" value="3000">Интернет магазин</option>
                   <option class="calculation__list-select" value="4000">Корпоративный cайт</option>
@@ -238,25 +238,25 @@
          <div class="border-container border-animation">
             <img class="border-bottom" src="./img/border.jpg" alt="Нижняя линия">
          </div>
-         <div class="statistics__container">
+         <div class="statistics__container site-animation">
             <div class="statistics__list">
                <img class="statistics__img-icon" src="./img/statistics/statistics__img_icon1.png" alt="иконки">
-               <h3 class="statistics__list-title statistics-animation">120</h3>
+               <h3 class="statistics__list-title">120</h3>
                <p class="statistics__list-subtitle">СЧАСТЛИВЫХ КЛИЕНТОВ</p>
             </div>
             <div class="statistics__list">
                <img class="statistics__img-icon" src="./img/statistics/statistics__img_icon2.png" alt="иконки">
-               <h3 class="statistics__list-title statistics-animation">4,600</h3>
+               <h3 class="statistics__list-title">4,600</h3>
                <p class="statistics__list-subtitle">ЧАСОВ РАБОТЫ</p>
             </div>
             <div class="statistics__list">
                <img class="statistics__img-icon" src="./img/statistics/statistics__img_icon3.png" alt="иконки">
-               <h3 class="statistics__list-title statistics-animation">340</h3>
+               <h3 class="statistics__list-title">340</h3>
                <p class="statistics__list-subtitle">ПРОЕКТОВ ЗАВЕРШЕНО</p>
             </div>
             <div class="statistics__list">
                <img class="statistics__img-icon" src="./img/statistics/statistics__img_icon4.png" alt="иконки">
-               <h3 class="statistics__list-title statistics-animation">23</h3>
+               <h3 class="statistics__list-title">23</h3>
                <p class="statistics__list-subtitle">НАГРАД ПОЛУЧЕНО</p>
             </div>
          </div>
@@ -307,7 +307,6 @@
                </div>
 
                <div class="swiper-pagination"></div>
-
                <!--  <div class="swiper-button-prev"></div>
                <div class="swiper-button-next"></div>
                <div class="swiper-scrollbar"></div> -->
@@ -383,6 +382,15 @@
       </div>
       <div class="footer__text">Copyright © 2021 Андрей Браун. Design by Web</div>
    </footer>
+
+   <div class="modal-container">
+      <div id="modal" class="modal">
+         <p class="modal__text">Хочешь получить скидку? Жми кнопку ниже!</p>
+         <button class="modal__btn" title="Закрыть"
+            onclick="document.getElementById('modal').style.display='none';"></button>
+         <a href="#calculation"><button class="modal__button" id="modal__button">Получить скидку</button></a>
+      </div>
+   </div>
 
    <script src="./js/jquery-3.6.0.min.js"></script>
    <script src="./js/swiper-bundle.min.js"></script>
